@@ -6,7 +6,7 @@ class Cuenta{
 	private int numero;
 	private Cliente titular = new Cliente();
 	
-	private static int total = 0;
+	private static int total;
 
 	public Cuenta(int agencia) {
 		if (agencia <= 0) {
