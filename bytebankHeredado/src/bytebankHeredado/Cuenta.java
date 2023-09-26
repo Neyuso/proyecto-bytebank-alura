@@ -11,8 +11,7 @@ class Cuenta{
 	public Cuenta(int agencia, int numero) {
 		this.agencia = agencia;
 		this.numero = numero;
-		System.out.println("Estoy creando una");
-		
+	    System.out.println("Van creadas: "+total+" cuentas");
 		Cuenta.total++;
 	}
 	
@@ -26,16 +25,15 @@ class Cuenta{
 			return true;
 		}
 		return false;
-
 	}
 	
 	public boolean transferir(double valor, Cuenta cuenta) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			cuenta.depositar(valor);
-			return true;
-		}
-		return false;
+	    if (this.saldo >= valor) {
+	        this.retirar(valor);
+	        cuenta.depositar(valor);
+	        return true;
+	    }
+	return false;
 	}
 	
 	public double getSaldo(){
