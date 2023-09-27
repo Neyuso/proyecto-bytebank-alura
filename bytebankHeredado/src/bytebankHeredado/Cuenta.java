@@ -1,8 +1,8 @@
 package bytebankHeredado;
 
-class Cuenta{
-	private double saldo;
-	private int agencia;
+public abstract class Cuenta{
+	protected double saldo;
+	private int agencia =1;
 	private int numero;
 	private Cliente titular = new Cliente();
 	
@@ -15,9 +15,7 @@ class Cuenta{
 		Cuenta.total++;
 	}
 	
-	public void depositar(double valor) {
-		this.saldo += valor;
-	}
+	public abstract void depositar(double valor);
 	
 	public boolean retirar(double valor){
 		if (this.saldo >= valor) {
