@@ -1,13 +1,9 @@
 package bytebankHeredado;
 
-public abstract class Autenticable extends Funcionario{
-
-	private String clave;
+public interface Autenticable {
 	
-	public void setClave (String clave) {
-		this.clave = clave;
-	}
+	public void setClave (String clave);
 	
-	public abstract boolean iniciarSesion (String clave);
+	public boolean iniciarSesion (String clave);
 
 }
