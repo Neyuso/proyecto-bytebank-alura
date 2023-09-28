@@ -11,24 +11,26 @@ public abstract class Cuenta{
 	public Cuenta(int agencia, int numero) {
 		this.agencia = agencia;
 		this.numero = numero;
-	    System.out.println("Van creadas: "+total+" cuentas");
+	    System.out.println("Estoy creadno una cuenta " + numero);
 		Cuenta.total++;
 	}
 	
 	public abstract void depositar(double valor);
 	
-	public boolean retirar(double valor){
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
-		} else {
-			return false;
+	public void retirar(double valor) throws SaldoInsuficienteException {
+		if (this.saldo <= valor) {
+			throw new SaldoInsuficienteException("No tienes saldo");
 		}
+		this.saldo -= valor;
 	}
 	
 	public boolean transferir(double valor, Cuenta cuenta) {
 	    if (this.saldo >= valor) {
-	        this.retirar(valor);
+	        try {
+				this.retirar(valor);
+			} catch (SaldoInsuficienteException e) {
+				e.printStackTrace();
+			}
 	        cuenta.depositar(valor);
 	        return true;
 	    }
