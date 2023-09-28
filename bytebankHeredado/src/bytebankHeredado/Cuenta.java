@@ -21,8 +21,9 @@ public abstract class Cuenta{
 		if (this.saldo >= valor) {
 			this.saldo -= valor;
 			return true;
+		} else {
+			return false;
 		}
-		return false;
 	}
 	
 	public boolean transferir(double valor, Cuenta cuenta) {
