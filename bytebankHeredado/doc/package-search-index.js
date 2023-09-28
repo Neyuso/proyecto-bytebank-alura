@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"bytebankHeredado","l":"co.com.bytebank.modelo"},{"m":"bytebankHeredado","l":"co.com.bytebank.test"}];updateSearchResults();
