@@ -1,6 +1,10 @@
 package co.com.bytebank.test;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Vector;
 
 import co.com.bytebank.modelo.*;
 
@@ -8,9 +12,12 @@ public class TestArrayList {
 
 	public static void main(String[] args) {
 		
-		ArrayList<Cuenta> lista = new ArrayList<>();
+		//List<Cliente> ListaClientes = new LinkedList<>();
+		
+		List<Cuenta> lista = new Vector<>();
 		Cuenta cc = new CuentaCorriente(11, 22);
 		Cuenta cc2 = new CuentaCorriente(13, 42);
+		Cuenta cc3 = new CuentaCorriente(11, 22);
 		
 		lista.add(cc);
 		lista.add(cc2);
@@ -28,6 +35,13 @@ public class TestArrayList {
 		// Por cada cuenta : lita
 		for (Cuenta cuenta : lista) {
 			System.out.println(cuenta);
+		}
+		
+		boolean contiene = lista.contains(cc3);
+		
+		//Por referencia
+		if (contiene) {
+			System.out.println("Si, es igual (equals) ");
 		}
 	}
 	

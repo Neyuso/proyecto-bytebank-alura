@@ -79,6 +79,10 @@ public abstract class Cuenta{
 		}
 	}
 	
+	public int getNumero() {
+		return numero;
+	}
+	
 	public int getAgencia() {
 		return agencia;
 	}
@@ -97,8 +101,18 @@ public abstract class Cuenta{
 	
     @Override
     public String toString() {
-        String cuenta = "Numero: " + this.numero + ", Agencia:" + this.agencia;
+        String cuenta = "Numero: " + this.numero + ", Agencia:" + this.agencia
+        		+ ", Titular: " + this.titular.getNombre();
         return cuenta;
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+    	//Basada en valores
+    	Cuenta cuenta = (Cuenta) obj;
+    	return this.agencia == cuenta.getAgencia() &&
+     	       this.numero == cuenta.getNumero();
+    }
+    
 }
 	
